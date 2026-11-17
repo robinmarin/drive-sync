@@ -15,4 +15,9 @@ export BUN_TMPDIR="${XDG_CACHE_HOME:-$HOME/.cache}/bun/tmp"
 mkdir -p "$BUN_TMPDIR"
 
 (cd "$SDK/cli" && bun install --frozen-lockfile)
-(cd "$ROOT" && bun install)
+
+# The CLI links the SDK packages file-by-file, and Bun resolves bare imports
+# from each file's real path. Point the SDK sources at the CLI's node_modules
+# so they resolve, sharing one (patched) copy of @protontech/crypto.
+ln -sfn ../../cli/node_modules "$SDK/client/js/node_modules"
+ln -sfn ../../../cli/node_modules "$SDK/incubating/account/js/node_modules"
