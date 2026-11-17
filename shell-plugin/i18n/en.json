@@ -1,0 +1,73 @@
+{
+  "title": "Drive sync",
+  "disclaimer": "This is a third-party application not officially supported by Proton.",
+
+  "state.starting": "Connecting…",
+  "state.idle": "Up to date",
+  "state.syncing": "Syncing…",
+  "state.paused": "Paused",
+  "state.pausedDeletes": { "one": "Paused: %1 deletion needs approval", "other": "Paused: %1 deletions need approval" },
+  "state.error": "Sync error",
+  "state.offline": "Offline, retrying",
+  "state.signed_out": "Not signed in",
+  "state.stopped": "Not running",
+  "state.missing": "Not running",
+
+  "action.upload": "Uploaded",
+  "action.download": "Downloaded",
+  "action.mkdirRemote": "Folder created in Drive",
+  "action.mkdirLocal": "Folder created locally",
+  "action.trashRemote": "Moved to Drive trash",
+  "action.trashLocal": "Moved to local trash",
+  "action.conflict": "Conflict, kept both",
+  "action.reconcile": "Matched",
+  "action.record": "Matched",
+  "action.other": "Synced",
+
+  "action.upload.now": "Uploading %1",
+  "action.download.now": "Downloading %1",
+  "action.mkdirRemote.now": "Creating %1 in Drive",
+  "action.mkdirLocal.now": "Creating %1",
+  "action.trashRemote.now": "Trashing %1 in Drive",
+  "action.trashLocal.now": "Trashing %1",
+  "action.conflict.now": "Resolving %1",
+  "action.reconcile.now": "Checking %1",
+  "action.record.now": "Checking %1",
+  "action.other.now": "Syncing %1",
+
+  "time.never": "Never",
+  "time.justNow": "Just now",
+  "time.minutesAgo": "%1m ago",
+  "time.hoursAgo": "%1h ago",
+  "time.daysAgo": "%1d ago",
+
+  "info.folder": "Folder",
+  "info.drive": "Drive folder",
+  "info.lastSync": "Last sync",
+  "info.pending": "Left in this pass",
+
+  "pause": "Pause syncing",
+  "resume": "Resume syncing",
+  "openFolder": "Open folder",
+  "syncNow": "Sync now",
+  "openWeb": "Open Drive in the browser",
+
+  "recent": "Recent activity",
+  "recent.empty": "Nothing synced yet",
+  "recent.meta": "%1 · %2",
+  "errors": "Errors",
+
+  "deletes.title": { "one": "%1 item would be deleted", "other": "%1 items would be deleted" },
+  "deletes.detail": "More than half of your synced items disappeared at once, so syncing paused. Restore them to keep them, or allow the deletion.",
+  "deletes.allow": "Allow this deletion",
+
+  "signIn.title": "Sign in",
+  "signIn.waiting": "Finish signing in in your browser…",
+
+  "start.title": "Start syncing",
+  "start.detail": "The drivesync service is not running.",
+
+  "error.socket": "Couldn't reach the drivesync service.",
+  "error.login": "Sign-in didn't finish.",
+  "error.reply": "The drivesync service rejected the command."
+}

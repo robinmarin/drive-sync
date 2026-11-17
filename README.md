@@ -13,7 +13,7 @@ files, until this says otherwise.**
 
 - [x] Sign in via browser, session in the desktop keyring
 - [x] Sync daemon: two-way sync, conflict copies, safety guards, control socket
-- [ ] Omarchy bar plugin (status icon + panel)
+- [x] Omarchy bar widget (status icon + panel)
 - [ ] Packaging (PKGBUILD)
 - [ ] Later: rename/move detection, selective sync, files on demand
 
@@ -55,7 +55,27 @@ drivesync login                          # browser sign-in
 systemctl --user enable --now drivesync
 drivesync status
 journalctl --user -u drivesync -f        # logs
+
+./scripts/install-plugin.sh --enable     # Omarchy bar widget (right section)
 ```
+
+### Bar widget
+
+`shell-plugin/` is an Omarchy shell plugin (`drivesync.panel`). The icon shows the
+sync state (up to date, syncing, paused, error, offline, not running); click for the
+panel, middle-click to pause/resume, right-click to open the synced folder.
+
+The panel shows the folders, last sync, recent activity and errors, with a pause
+switch, *Sync now*, *Open folder* and *Open in browser*. It also offers **Sign in**
+when signed out, **Start syncing** when the service is stopped, and the explicit
+**Allow this deletion** override when the mass-deletion guard has paused sync.
+Keys: `p` pause/resume, `s` sync now, `o` open folder, `w` open in browser,
+arrows + Enter to reveal a recent file.
+
+It reads the daemon's status file and talks to its control socket directly (no
+polling of Drive, no extra processes). Re-run `./scripts/install-plugin.sh` after
+editing `shell-plugin/`; the shell reloads it automatically. It can also be driven
+over IPC: `omarchy-shell drivesync.panel status|pause|resume|syncNow|toggle`.
 
 Commands: `login`, `logout`, `daemon`, `status [--json]`, `pause`, `resume [--allow-deletes]`,
 `sync`, `reset`, `paths`.
@@ -66,7 +86,7 @@ The daemon writes its live status to `$XDG_RUNTIME_DIR/drivesync/status.json`
 ## Development
 
 ```bash
-mise exec -- bun test                    # planner, engine (fake Drive), control socket
+mise exec -- bun test                    # planner, engine (fake Drive), control socket, widget model
 ```
 
 Layout: `src/sync/` is Proton-agnostic (planner, engine, local tree, state DB);

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "drivesync.panel",
+  "name": "drivesync",
+  "version": "0.1.0",
+  "author": "Robin Marin",
+  "license": "MIT",
+  "description": "Status and controls for drivesync, an unofficial third-party Proton Drive sync client for Linux.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "drivesync",
+    "description": "Sync status, pause and resume, recent activity, and quick access to the synced folder.",
+    "category": "Files",
+    "aliases": ["drive", "sync", "cloud"],
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {},
+    "schema": []
+  }
+}
