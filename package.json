@@ -1,0 +1,10 @@
+{
+  "name": "drivesync",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "engines": { "bun": "1.4.2" },
+  "scripts": {
+    "spike": "bun src/spike.ts"
+  }
+}
