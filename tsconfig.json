@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "strict": true,
+        "skipLibCheck": true,
+        "noEmit": true,
+        "allowImportingTsExtensions": true,
+        "lib": ["esnext", "dom", "DOM.AsyncIterable", "DOM.Iterable"],
+        "types": ["bun"],
+        "baseUrl": ".",
+        "paths": {
+            "@protontech/drive-sdk": ["./vendor/proton-sdk/client/js/src/index.ts"],
+            "@protontech/drive-sdk/*": ["./vendor/proton-sdk/client/js/src/*"]
+        }
+    },
+    "include": ["src/**/*.ts"]
+}

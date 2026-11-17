@@ -1,10 +1,17 @@
 {
   "name": "drivesync",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.1.0",
   "type": "module",
-  "engines": { "bun": "1.4.2" },
+  "engines": {
+    "bun": "1.4.2"
+  },
   "scripts": {
+    "daemon": "bun src/main.ts daemon",
+    "test": "bun test",
     "spike": "bun src/spike.ts"
+  },
+  "bin": {
+    "drivesync": "bin/drivesync"
   }
 }

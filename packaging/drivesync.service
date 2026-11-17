@@ -1,0 +1,18 @@
+[Unit]
+Description=drivesync - unofficial Proton Drive sync
+Documentation=https://github.com/robinmarin/drive-sync
+# The session lives in the desktop keyring (Secret Service), which needs the user session bus.
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/drivesync daemon
+Restart=on-failure
+RestartSec=30
+# Exit code 2 = needs user action (not signed in, sync folders changed): don't restart-loop.
+RestartPreventExitStatus=2
+Nice=10
+IOSchedulingClass=idle
+
+[Install]
+WantedBy=default.target

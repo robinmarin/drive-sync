@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Launcher: runs drivesync from this checkout with the Bun version pinned in mise.toml.
+set -euo pipefail
+DIR="$(cd "$(dirname "$(readlink -f "$0")")/.." && pwd)"
+exec mise -C "$DIR" exec -- bun "$DIR/src/main.ts" "$@"
